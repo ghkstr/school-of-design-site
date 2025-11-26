@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visual Portfolio</title>
+<link rel="stylesheet" href="styles/portfolio.css">
+</head>
+<body>
+
+  <div class="lightbox-overlay">
+    <img id="lightbox-img" />
+  </div>
+
+  <div class="toggle-wrapper">
+    <span> Story </span>
+    <label class="switch">
+      <input type="checkbox" id="viewToggle">
+      <span class="slider round"></span>
+    </label>
+    <span>Portfolio</span>
+  </div>
+
+  <div id="upload-section" style="display:none; text-align: center; margin-top: 80px;">
+    <input type="file" id="uploadInput" accept="image/*" multiple>
+    <div id="fileList" style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"></div>
+    <button onclick="uploadImages()">Upload</button>
+  </div>
+
+  <section id="portfolio" class="image-grid"></section>
+
+  <div class="bottom-controls">
+    <button onclick="document.getElementById('uploadInput').click()">Upload</button>
+    <button onclick="saveChanges()">Save</button>
+    <button onclick="toggleEditMode()">Toggle Edit Mode</button>
+  </div>
+
+  <script src="node_modules/packery/dist/packery.pkgd.min.js"></script>
+  <script src="scripts/portfolio.js"></script>
+
+</body>
+</html>
